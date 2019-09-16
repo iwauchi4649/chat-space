@@ -1,0 +1,10 @@
+.side-content
+  .side-content__header
+    %h1 testuser
+    .side-content__header__icon
+      = link_to "", class: "side-content__header__icon" do
+        = fa_icon "pencil-square-o"
+      = link_to "", class: "side-content__header__icon" do
+        = fa_icon "cog"
+  .side-content__group-contents
+    = render "partials/group_list_content"
