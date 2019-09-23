@@ -1,6 +1,8 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 画面左側
 .side-content {
   width: 300px;
   height: 100vh;
@@ -21,6 +23,7 @@
     float: left;
   }
 
+  // Gemのfont-awesomeを使用
   &__icon {
 
   i {
@@ -50,6 +53,7 @@
   }
 }
 
+// 画面右側
 .main-content {
   width: calc(100vw - 300px);
   height: 100vh;
@@ -60,5 +64,119 @@
     padding: 0px 40px;
     height: 100px;
     background-color: white;
-}
-}
+    
+    &__name {
+      float: left;
+
+      h1 {
+        padding: 30px 0 10px;
+        font-size: 20px;
+        letter-spacing: 2px;
+        color: #333333;
+      }
+      
+      p {
+        padding-bottom: 15px;
+        font-size: 12px;
+        color: #999999;
+        float: left;
+      }
+
+      span {
+        padding-bottom: 15px;
+        font-size: 12px;
+        color: #999999;
+        float: right;
+        margin-left: 5px;
+      }
+    }
+    
+    &__edit-btn {
+      float: right;
+      display: inline-block;
+      margin: 28px 0;
+      padding: 0 20px;
+      line-height: 40px;
+      color: #38AEF0;
+      font-size: 14px;
+      border: 2px solid;
+      text-align: center;
+
+      &__inside {
+        text-decoration: none;
+        color: #38AEF0;
+      }
+    }
+  }
+  
+  &__chat-contents {
+    padding: 46px 40px 40px;
+    height: calc(100% - 250px);
+    background-color: #fafafa;
+
+      &--name {
+        display: inline-block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #999999;
+        float: left;
+      }
+      
+      &--time {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 12px;
+        color: #434A54;
+        float: left;
+      }
+
+      &--message {
+        font-size: 14px;
+        color: #434A54;
+        float: left;
+        clear: both;
+      }
+    }
+    &__footer {
+      padding: 20px 40px;
+      position: fixed;
+      bottom: 0;
+      width: calc(100vw - 380px);
+      height: 50px;
+      background-color: #B8C3C7;
+  
+      &__message {
+        padding-left: 10px;
+        width: 80%;
+        height: 50px;
+        line-height: 50px;
+        background-color: white;
+        font-size: 16px;
+        color: black;
+        border: none;
+        resize: none;
+        float: left;
+      }
+      
+      &--file {
+        width: 30px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        background-color: white;
+        float: left;
+      }
+      
+      &__submit-messages {
+        display: inline-block;
+        padding-right: 30px;
+        padding-left: 30px;
+        line-height: 50px;
+        background-color: #38AEF0;
+        font-size: 16px;
+        color: white;
+        float: right;
+      }
+    }
+  }
