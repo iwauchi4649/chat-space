@@ -114,6 +114,10 @@
     height: calc(100% - 250px);
     background-color: #fafafa;
 
+    .chat-body {
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+
       &--name {
         display: inline-block;
         margin-bottom: 10px;
@@ -138,6 +142,8 @@
         clear: both;
       }
     }
+  }
+  
     &__footer {
       padding: 20px 40px;
       position: fixed;

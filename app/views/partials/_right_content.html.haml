@@ -2,12 +2,20 @@
   .main-content__header
     .main-content__header__name
       %h1 group1
-      %a user1 user2 user3
+      %a Member： user1 user2 user3
     .main-content__header__edit-btn
       = link_to "", class: 'main-content__header__edit-btn__inside' do
         ="Edit"
+  
   .main-content__chat-contents
-    = "user1"
+    .chat-body
+      .chat-body--name
+        = "user1"
+      .chat-body--time
+        = "2019/9/23"
+      .chat-body--message
+        ="あああああああ"
+
   .main-content__footer
     .main-content__footer__message
       ="type a message"
