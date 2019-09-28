@@ -1,24 +1,56 @@
-# README
+# Chatspace
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### version
 
-Things you may want to cover:
+$ ruby -v  ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-darwin17]
+$ rails -v  Rails 5.1.5
 
-* Ruby version
 
-* System dependencies
+## group_users table
 
-* Configuration
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null :false, foreign_key :true|
+|group_id|references|null :false, foreign_key :true|
 
-* Database creation
+### Association
+- belongs_to :user
+- belongs_to :group
 
-* Database initialization
+## messages table
 
-* How to run the test suite
+|Column|Type|Options|
+|------|----|-------|
+|body|text|       |
+|image|string|        |
+|user_id|references|null :false, foreign_key :true|
+|group_id|references|null :false, foreign_key :true|
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- belongs_to :user
+- belongs_to :group
 
-* Deployment instructions
+## users table
 
-* ...
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null :false, unique :true|
+|email|string|null :false, unique :true|
+
+### Association
+- has_many :messages
+- has_many :group_users
+- has_many :group, through::group_users
+
+## groups table
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null :false, unique :true, index|
+
+### Association
+- has_many :messages
+- has_many :group_users
+- has_many :users through::group_users
+
+Jot something down

@@ -2,7 +2,7 @@
   .main-content__header
     .main-content__header__name
       %h1 group1
-      %a Member： user1 user2 user3
+      %p Member： user1 user2 user3
     .main-content__header__edit-btn
       = link_to "", class: 'main-content__header__edit-btn__inside' do
         ="Edit"
@@ -18,7 +18,7 @@
 
   .main-content__footer
     .main-content__footer__message
-      ="type a message"
+      = "type a message"
     .main-content__footer--file
       = fa_icon 'picture-o', class: 'icon'
     .main-content__footer__submit-messages
