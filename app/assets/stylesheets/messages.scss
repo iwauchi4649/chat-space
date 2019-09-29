@@ -58,7 +58,7 @@
   width: calc(100vw - 300px);
   height: 100vh;
   background-color: #fafafa;
-  float: right;
+  float: left;
   
   &__header {
     padding: 0px 40px;
@@ -144,49 +144,49 @@
     }
   }
 
-    &__footer {
-      padding: 20px 40px;
-      position: fixed;
-      bottom: 0;
-      width: calc(100vw - 380px);
-      height: 50px;
-      background-color: #B8C3C7;
+
   
+  &__footer {
+    padding: 20px 40px;
+    position: fixed;
+    bottom: 0;
+    width: calc(100vw - 380px);
+    height: 50px;
+    background-color: #B8C3C7;
+
+    &__center {
+      display: flex;
+
       &__message {
         padding-left: 10px;
-        width: 890px;
+        width: 100%;
         height: 50px;
         line-height: 50px;
         background-color: white;
         font-size: 16px;
         color: black;
-        border: none;
-        resize: none;
-        float: left;
-      }
+        border-style: none;
       
-      &--file {
-        width: 30px;
-        height: 50px;
-        text-align: center;
-        line-height: 50px;
-        background-color: white;
-        float: left;
-
-        &__image {
-
+        &__file {
+          width: 30px;
+          height: 50px;
+          text-align: center;
+          line-height: 50px;
+          background-color: white;
+          padding-right: 10px;
+          float: right;
         }
       }
-      
+
       &__submit-messages {
-        display: inline-block;
-        padding-right: 30px;
-        padding-left: 30px;
+        padding: 0 30px;
         line-height: 50px;
         background-color: #38AEF0;
         font-size: 16px;
         color: white;
-        float: right;
+        margin-left: 15px;
+        border-style: none;
+        }
       }
     }
   }
