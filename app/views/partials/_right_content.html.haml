@@ -1,25 +1,25 @@
-.main-content
-  .main-content__header
-    .main-content__header__name
-      %h1 group1
-      %p Member： user1 user2 user3
-    .main-content__header__edit-btn
-      = link_to "", class: 'main-content__header__edit-btn__inside' do
-        Edit
-  
-  .main-content__chat-contents
-    .chat-body
-      .chat-body--name
-        = "user1"
-      .chat-body--time
-        = "2019/9/23"
-      .chat-body--message
-        ="あああああああ"
+  .main-content
+    .main-content__header
+      .main-content__header__name
+        %h1 group1
+        %p Member： user1 user2 user3
+      .main-content__header__edit-btn
+        = link_to "", class: 'main-content__header__edit-btn__inside' do
+          Edit
+    
+    .main-content__chat-contents
+      .chat-body
+        .chat-body--name
+          = "user1"
+        .chat-body--time
+          = "2019/9/23"
+        .chat-body--message
+          ="あああああああ"
 
-  .main-content__footer
-    .main-content__footer__center
-      %input{ placeholder: "type a message" , class: 'main-content__footer__center__message' }
-        %label.main-content__footer__center__message__file
-          = fa_icon 'picture-o'
-          %input{ type: "file", class: 'main-content__footer__center__message__file' , style:"display:none;" }
-      %input{ type:  "submit"  , value: "Send" ,  class:  "main-content__footer__center__submit-messages" } 
+    .main-content__footer
+      .main-content__footer__center
+        %input{ placeholder: "type a message" , class: 'main-content__footer__center__message' }
+          %label.main-content__footer__center__message__file
+            = fa_icon 'picture-o'
+            %input{ type: "file", class: 'main-content__footer__center__message__file' , style:"display:none;" }
+        %input{ type:  "submit"  , value: "Send" ,  class:  "main-content__footer__center__submit-messages" } 
