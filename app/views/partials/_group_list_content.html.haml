@@ -1,5 +1,7 @@
-.side-content__group-contents--list
-  %a test1
-  .side-content__group-content--name
-  %a testuser
-  .side-content__group-content--message
+- current_user.groups.each do |group|
+  .side-content__group-contents--list
+    = link_to group_messages_path(group) do
+      .side-content__group-content--name
+        = group.name
+      .side-content__group-content--message
+        = group.show_last_message
