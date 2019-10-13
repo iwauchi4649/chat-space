@@ -1,7 +1,8 @@
 .main-content
   .main-content__header
     .main-content__header__name
-      %h1 group1
+      %h1 
+        = current_user.name
       %p Member： user1 user2 user3
     .main-content__header__edit-btn
       = link_to "", class: 'main-content__header__edit-btn__inside' do
