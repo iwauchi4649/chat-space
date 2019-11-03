@@ -34,9 +34,10 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.main-content__chat-contents').append(html);
+      $('.main-content__footer__center__message').val('');
       $(".main-content__footer__center__submit-messages").prop( "disabled", false );
       $('.main-content__chat-contents').animate({scrollTop: $('.main-content__chat-contents')[0].scrollHeight}, 'fast');
-      $('.main-content__footer__center')[0].reset();
+      // $('.main-content__footer__center')[0].reset();
     })
 
    .fail(function(){
