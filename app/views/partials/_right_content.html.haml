@@ -9,8 +9,7 @@
           = user.name
 
     .main-content__header__edit-btn
-      = link_to "", class: 'main-content__header__edit-btn__inside' do
-        Edit
+      = link_to "Edit", edit_group_path(@group), class: 'main-content__header__edit-btn__inside' 
   
   .main-content__chat-contents
     = render @messages
