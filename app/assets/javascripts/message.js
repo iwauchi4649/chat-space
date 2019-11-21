@@ -1,19 +1,20 @@
 $(function(){
   function buildHTML(message){
-    var imagehtml = message.image == null ? `<img class= "lower-message__image" src=${message.image.url} >` : "";
+    var imagehtml = message.image ? `<img class= "lower-message__image" src="${message.image}" >` : "";
     var html = `<div class='chat-body' data-id="${message.id}">
-                    <div class='chat-body--name'>
-                      ${message.user_name}
-                    </div>
-                    <div class='chat-body--time'>
-                      ${message.date}
-                    </div>
-                    <div class='chat-body--message'>
+                  <div class='chat-body--name'>
+                    ${message.user_name}
+                  </div>
+                  <div class='chat-body--time'>
+                    ${message.date}
+                  </div>
+                  <div class='chat-body--message'>
+                    <p class="lower-message__content">
                       ${message.content}
-                    </div>
-                    ${imagehtml}
-                    </div>
-                  </div>`;
+                    </p>
+                      ${imagehtml}
+                  </div>
+                </div>`;
       return html;
   }
 
@@ -37,11 +38,11 @@ $(function(){
       $('.main-content__footer__center__message').val('');
       $(".main-content__footer__center__submit-messages").prop( "disabled", false );
       $('.main-content__chat-contents').animate({scrollTop: $('.main-content__chat-contents')[0].scrollHeight}, 'fast');
-      // $('.main-content__footer__center')[0].reset();
+      // $('.main-content__footer')[0].reset();
     })
 
    .fail(function(){
-    alert('自動更新に失敗しました');
+    alert('メッセージを入力してください');
     })
   })
 
@@ -57,7 +58,6 @@ $(function(){
         data: {last_id: last_message_id} //飛ばすデータは先ほど取得したlast_message_id。またparamsとして渡すためlast_idとする。
       })
       .done(function (messages) { //通信成功したら、controllerから受け取ったデータ（messages)を引数にとって以下のことを行う
-        console.log(messages)
         var insertHTML = '';//追加するHTMLの入れ物を作る
         messages.forEach(function (message) {//配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
           insertHTML = buildHTML(message); //メッセージが入ったHTMLを取得
@@ -66,9 +66,11 @@ $(function(){
         $('.main-content__chat-contents').animate({scrollTop: $('.main-content__chat-contents')[0].scrollHeight}, 'fast');//最新のメッセージが一番下に表示されようにスクロールする。
       })
       .fail(function () {
-        alert('自動更新に失敗しました');//ダメだったらアラートを出す
-      });
-    }
-  };
+        alert('メッセージを入力してください');//ダメだったらアラートを出す
+      })
+      .always(() => {
+        $(".main-content__footer__center__submit-messages").removeAttr("disabled");
+      })
+    }};
 setInterval(reloadMessages, 5000);//5000ミリ秒ごとにreloadMessagesという関数を実行し自動更新を行う。
 });
