@@ -1,7 +1,7 @@
 $(function() {
   function buildHTML(message){
     var imagehtml = message.image ? `<img class= "lower-message__image" src="${message.image}" >` : "";
-    var html = `<div class='chat-body' data-id="${message.id}">
+    var html = `<div class='chat-body' data-message-id="${message.id}">
                   <div class='chat-body--name'>
                     ${message.user_name}
                   </div>
@@ -48,7 +48,7 @@ $(function() {
 
   var reloadMessages = function () {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){//今いるページのリンクが/groups/グループID/messagesのパスとマッチすれば以下を実行。
-      var last_message_id = $('.chat-body:last').data("message-id"); //dataメソッドで.messageにある:last最後のカスタムデータ属性を取得しlast_message_idに代入。
+      var last_message_id = $('.chat-body:last').data("message-id"); //dataメソッドで.chat-bodyにある:last最後のカスタムデータ属性を取得しlast_message_idに代入。
       // var group_id = $(".group").data("group-id");
 
       $.ajax({ //ajax通信で以下のことを行う
@@ -72,5 +72,5 @@ $(function() {
         $(".main-content__footer__center__submit-messages").removeAttr("disabled");
       })
     }};
-setInterval(reloadMessages, 5000);//5000ミリ秒ごとにreloadMessagesという関数を実行し自動更新を行う。
+  setInterval(reloadMessages, 5000);//5000ミリ秒ごとにreloadMessagesという関数を実行し自動更新を行う。
 });
