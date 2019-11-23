@@ -157,6 +157,7 @@
 
       &__center {
         display: flex;
+        box-sizing: border-box;
 
         &__message {
           width: 890px;

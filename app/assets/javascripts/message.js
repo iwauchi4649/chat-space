@@ -62,8 +62,9 @@ $(function() {
         messages.forEach(function (message) {//配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
           insertHTML = buildHTML(message); //メッセージが入ったHTMLを取得
           $('.main-content__chat-contents').append(insertHTML);//メッセージを追加
+          $('.main-content__chat-contents').animate({scrollTop: $('.main-content__chat-contents')[0].scrollHeight}, 'fast');//最新のメッセージが一番下に表示されようにスクロールする。
         })
-        $('.main-content__chat-contents').animate({scrollTop: $('.main-content__chat-contents')[0].scrollHeight}, 'fast');//最新のメッセージが一番下に表示されようにスクロールする。
+        // $('.main-content__chat-contents').animate({scrollTop: $('.main-content__chat-contents')[0].scrollHeight}, 'fast');//最新のメッセージが一番下に表示されようにスクロールする。
       })
       .fail(function () {
         alert('メッセージを入力してください');//ダメだったらアラートを出す
