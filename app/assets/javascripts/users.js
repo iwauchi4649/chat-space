@@ -12,7 +12,7 @@ $(function() {
   function addNoUser() {
     let html = `
       <div class="chat-group-user clearfix">
-        <p class="chat-group-user__name">ユーザーが見つかりません</p>
+        <p class="chat-group-user__name">一致するメンバーが見つかりません</p>
       </div>
     `;
     $("#user-search-result").append(html);
@@ -57,11 +57,13 @@ $(function() {
   $(document).on("click", ".chat-group-user__btn--add", function() {
     const userName = $(this).attr("data-user-name");
     const userId = $(this).attr("data-user-id");
+    addDeleteUser(userName, userId);
+    addMember(userId);
     $(this)
       .parent()
       .remove();
-    addDeleteUser(userName, userId);
-    addMember(userId);
+    // addDeleteUser(userName, userId);
+    // addMember(userId);
   });
   $(document).on("click", ".chat-group-user__btn--remove", function() {
     $(this)
