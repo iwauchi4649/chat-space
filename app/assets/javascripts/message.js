@@ -72,5 +72,5 @@ $(function() {
         $(".main-content__footer__center__submit-messages").removeAttr("disabled");
       })
     }};
-  setInterval(reloadMessages, 5000);//5000ミリ秒ごとにreloadMessagesという関数を実行し自動更新を行う。
+  timer = setInterval(reloadMessages, 5000);//5000ミリ秒ごとにreloadMessagesという関数を実行し自動更新を行う。
 });
